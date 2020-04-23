@@ -7,6 +7,7 @@ public class Metodos3 {
 	private String[] Nombres, Mail;
 	private int cantidad, positivo, count1;
 	private String nom, nom2, mail;
+	private boolean exite = false;
 
 	public void IngresarDatos() {
 		System.out.println("Ingrese cantidad de personas");
@@ -34,7 +35,6 @@ public class Metodos3 {
 	public void ComprobarEmail() {
 		System.out.println("Ingrese el nombre a buscar");
 		nom = sc.nextLine();
-		boolean exite = false;
 
 		for (int i = 0; i < Nombres.length - 1; i++) {
 
@@ -63,10 +63,32 @@ public class Metodos3 {
 
 	}
 
+	public void Comprobarletra() {
+
+		for (int i = 0; i < Nombres.length; i++) {
+			boolean exite2 = false;
+			for (int j = 0; j <  Mail[i].length(); j++) {
+			
+
+				if (Mail[i].charAt(j) == '@') {
+					exite2 = true;
+					System.out.println(Mail[i] + " si tiene @");
+
+				}
+			}
+
+			if (exite2 == false) {
+				System.out.println(Mail[i] + " No tiene @");
+			}
+		}
+
+	}
+
 	public static void main(String[] args) {
 		Metodos3 ss = new Metodos3();
 		ss.IngresarDatos();
 		ss.MostrarDatosIntroduciodos();
 		ss.ComprobarEmail();
+		ss.Comprobarletra();
 	}
 }

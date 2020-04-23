@@ -9,6 +9,9 @@ public class listasWhile {
 	
 	
 	public void LISTA1() {
+		while (x==0) {
+		System.out.println("---");	
+		}
 		System.out.println("Introduzca los valores de la primera lista");
 		
 		while (x<5) {
